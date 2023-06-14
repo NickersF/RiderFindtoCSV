@@ -1,0 +1,15 @@
+C:\Source\RiderFindtoCSV\bin\Release\net7.0\RiderFindtoCSV.exe
+C:\Source\RiderFindtoCSV\bin\Release\net7.0\RiderFindtoCSV.deps.json
+C:\Source\RiderFindtoCSV\bin\Release\net7.0\RiderFindtoCSV.runtimeconfig.json
+C:\Source\RiderFindtoCSV\bin\Release\net7.0\RiderFindtoCSV.dll
+C:\Source\RiderFindtoCSV\bin\Release\net7.0\RiderFindtoCSV.pdb
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.csproj.AssemblyReference.cache
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.AssemblyInfoInputs.cache
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.AssemblyInfo.cs
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.csproj.CoreCompileInputs.cache
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.dll
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\refint\RiderFindtoCSV.dll
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.pdb
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\RiderFindtoCSV.genruntimeconfig.cache
+C:\Source\RiderFindtoCSV\obj\Release\net7.0\ref\RiderFindtoCSV.dll
