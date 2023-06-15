@@ -142,7 +142,7 @@ try
         
             parsedOutputFileStringList.Add(parsedLine);
 
-            // Clear the pathString for the next iteration
+            // Clear the column strings on directory change
             if (changeDirOnNextIteration)
             {
                 pathString = "";
@@ -156,9 +156,9 @@ try
     // Strip compiled code results from the list
     for (int i = parsedOutputFileStringList.Count - 1; i >= 0; i--)
     {
-        string s = parsedOutputFileStringList[i];
+        string line = parsedOutputFileStringList[i];
 
-        if (s.Contains("wwwroot\\") || s.Contains("js\\") || s.Contains("css\\") || s.Contains("lib\\"))
+        if (line.Contains("wwwroot\\") || line.Contains("js\\") || line.Contains("css\\") || line.Contains("lib\\"))
         {
             parsedOutputFileStringList.RemoveAt(i);
         }
