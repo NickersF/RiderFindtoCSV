@@ -109,13 +109,16 @@ try
         {
             fileNameString = line;
         }
-
-        // This is kind of shitty and gritty
-        // BUG: If the position field has a comma it pushed everything following it to
-        // BUG: a 4th column. I might truncate to the first comma after the condition.
-        // BUG: this mainly happens in string literals and CSS class combinators.
+        
         if (char.IsDigit(line[0]))
         {
+            int indexOfComma = line.IndexOf(',');
+
+            if (indexOfComma != -1)
+            {
+                line = line.Substring(0, indexOfComma) + "...";
+            }
+            
             positionString = line;
         }
 
