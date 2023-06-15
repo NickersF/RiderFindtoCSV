@@ -45,6 +45,7 @@ try
     string positionString = "";
     List<string> textFileAsStringList = File.ReadAllLines(inputFile).ToList();
     List<string> parsedOutputFileStringList = new List<string>();
+    bool changeDirOnNextIteration = false;
 
     // Start the CSV header. Could go further with this and implement it as cmd args (meh)
     parsedOutputFileStringList.Add("Path,File Name,Position");
@@ -114,22 +115,55 @@ try
         {
             int indexOfComma = line.IndexOf(',');
 
+            // If the line has a comma, replace it with '...' and trim
             if (indexOfComma != -1)
             {
                 line = line.Substring(0, indexOfComma) + "...";
             }
+
+            // Add '...' to other lines as well for consitency sake
+            if (indexOfComma == -1)
+            {
+                line += "...";
+            }
+            
+            // Check if the next line is a path line set flag to reset the pathString
+            if (i < textFileAsStringList.Count - 1 && textFileAsStringList[i + 1].EndsWith("\\"))
+            {
+                changeDirOnNextIteration = true;
+            }
             
             positionString = line;
         }
-
+        
         if (fileNameString != "" && positionString != "")
         {
             string parsedLine = pathString + "," + fileNameString + "," + positionString;
         
             parsedOutputFileStringList.Add(parsedLine);
+
+            // Clear the pathString for the next iteration
+            if (changeDirOnNextIteration)
+            {
+                pathString = "";
+                fileNameString = "";
+                positionString = "";
+                changeDirOnNextIteration = false;
+            }
         }
     }
 
+    // Strip compiled code results from the list
+    for (int i = parsedOutputFileStringList.Count - 1; i >= 0; i--)
+    {
+        string s = parsedOutputFileStringList[i];
+
+        if (s.Contains("wwwroot\\") || s.Contains("js\\") || s.Contains("css\\") || s.Contains("lib\\"))
+        {
+            parsedOutputFileStringList.RemoveAt(i);
+        }
+    }
+    
     // Write the List of strings to the output stream and exit
     File.WriteAllLines(outputFile, parsedOutputFileStringList);
 }

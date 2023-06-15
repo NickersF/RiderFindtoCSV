@@ -1,0 +1,50 @@
+Targets
+    Occurrences of 'ScrollFormCloseNav_Btn' in Solution
+Found usages  (24 usages found)
+    <IrisUI>  (24 usages found)
+        Views  (4 usages found)
+            RISApp  (2 usages found)
+                RISFeatureDisplay  (2 usages found)
+                    RISFeatureDisplay.cshtml  (2 usages found)
+                        22 <div id="ScrollFormCloseNav_Btn" class="d-flex justify-content-center align-items-center">
+                        23 <i id="ScrollFormCloseNav_Btn_Icon" class="fas fa-chevron-left nudge-icon"></i>
+            Shared  (2 usages found)
+                EditorTemplates  (2 usages found)
+                    IrisEditor.cshtml  (2 usages found)
+                        22 <button id="ScrollFormCloseNav_Btn" class="i-button-dark" type="button">
+                        23 <i id="ScrollFormCloseNav_Btn_Icon" class="fa-solid fa-chevron-left"></i>
+        src  (6 usages found)
+            sass  (1 usage found)
+                components  (1 usage found)
+                    _scrollformeditor.scss  (1 usage found)
+                        78 #ScrollFormCloseNav_Btn > i {
+            typescript  (5 usages found)
+                controllers  (5 usages found)
+                    scrollformeditor.ts  (5 usages found)
+                        82 $("#ScrollFormRootContainer").on("click", "#ScrollFormCloseNav_Btn", function () {
+                        95 $("#ScrollFormRootContainer").on("mouseover", "#ScrollFormCloseNav_Btn", function () {
+                        96 $("#ScrollFormCloseNav_Btn_Icon").addClass("animate__animated animate__headShake");
+                        99 $("#ScrollFormRootContainer").on("mouseout", "#ScrollFormCloseNav_Btn", function () {
+                        100 $("#ScrollFormCloseNav_Btn_Icon").removeClass("animate__animated animate__headShake");
+        wwwroot  (14 usages found)
+            css  (3 usages found)
+                styles.css  (3 usages found)
+                    51061 #ScrollFormCloseNav_Btn {
+                    51072 #ScrollFormCloseNav_Btn:hover {
+                    51082 #ScrollFormCloseNav_Btn > i {
+            js  (6 usages found)
+                main.js  (5 usages found)
+                    47723 $("#ScrollFormRootContainer").on("click", "#ScrollFormCloseNav_Btn", function () {
+                    47734 $("#ScrollFormRootContainer").on("mouseover", "#ScrollFormCloseNav_Btn", function () {
+                    47735 $("#ScrollFormCloseNav_Btn_Icon").addClass("animate__animated animate__headShake");
+                    47737 $("#ScrollFormRootContainer").on("mouseout", "#ScrollFormCloseNav_Btn", function () {
+                    47738 $("#ScrollFormCloseNav_Btn_Icon").removeClass("animate__animated animate__headShake");
+                main.js\main.js.map  (1 usage found)
+                    1 ScrollFormRootContainer\").on(\"click\", \"#ScrollFormCloseNav_Btn\", function () {\r\n            $(\"#ScrollFormNavContainer\").addClass(\"close-scroll-nav\").removeClass
+            lib  (5 usages found)
+                ScrollingFormEditor.js  (5 usages found)
+                    71 $("#ScrollFormRootContainer").on("click", "#ScrollFormCloseNav_Btn", function () {
+                    84 $("#ScrollFormRootContainer").on("mouseover", "#ScrollFormCloseNav_Btn", function () {
+                    85 $("#ScrollFormCloseNav_Btn_Icon").addClass("animate__animated animate__headShake");
+                    88 $("#ScrollFormRootContainer").on("mouseout", "#ScrollFormCloseNav_Btn", function () {
+                    89 $("#ScrollFormCloseNav_Btn_Icon").removeClass("animate__animated animate__headShake");
