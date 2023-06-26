@@ -113,27 +113,43 @@ try
         
         if (char.IsDigit(line[0]))
         {
+            char firstCharOfCurrentLine = line[0];
+            char firstCharOfExistingLine = '\0';
             int indexOfComma = line.IndexOf(',');
-
-            // If the line has a comma, replace it with '...' and trim
-            if (indexOfComma != -1)
+            
+            if (!string.IsNullOrEmpty(positionString))
             {
-                line = line.Substring(0, indexOfComma) + "...";
-            }
-
-            // Add '...' to other lines as well for consitency sake
-            if (indexOfComma == -1)
-            {
-                line += "...";
+                 firstCharOfExistingLine = positionString[0];
             }
             
-            // Check if the next line is a path line set flag to reset the pathString
-            if (i < textFileAsStringList.Count - 1 && textFileAsStringList[i + 1].EndsWith("\\"))
+            // If the current line number is the same as the previous one clear the positionString
+            // to prevent duplicate lines of code from being sent to the output
+            if (firstCharOfCurrentLine == firstCharOfExistingLine)
             {
-                changeDirOnNextIteration = true;
+                positionString = "";
             }
+            else
+            {
+                // If the line has a comma, replace it with '...' and trim
+                if (indexOfComma != -1)
+                {
+                    line = line.Substring(0, indexOfComma) + "...";
+                }
+
+                // Add '...' to other lines as well for consitency sake
+                if (indexOfComma == -1)
+                {
+                    line += "...";
+                }
             
-            positionString = line;
+                // Check if the next line is a path line set flag to reset the pathString
+                if (i < textFileAsStringList.Count - 1 && textFileAsStringList[i + 1].EndsWith("\\"))
+                {
+                    changeDirOnNextIteration = true;
+                }
+            
+                positionString = line;
+            }
         }
         
         if (fileNameString != "" && positionString != "")
