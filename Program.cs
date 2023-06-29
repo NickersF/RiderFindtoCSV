@@ -113,13 +113,20 @@ try
         
         if (char.IsDigit(line[0]))
         {
+            // Char version that only checks the first character of the currently parsing line string
             char firstCharOfCurrentLine = line[0];
             char firstCharOfExistingLine = '\0';
-            int indexOfComma = line.IndexOf(',');
             
+            // Use extracted and casted line numbers to compare for clearing
+            int lineNumberOfCurrentLine = ExtractNumbersFromString(line);
+            int lineNUmberOfExistingLine = default;
+            
+            int indexOfComma = line.IndexOf(',');
+
             if (!string.IsNullOrEmpty(positionString))
             {
                  firstCharOfExistingLine = positionString[0];
+                 lineNUmberOfExistingLine = ExtractNumbersFromString(positionString);
             }
             
             // If the current line number is the same as the previous one clear the positionString
@@ -191,3 +198,23 @@ catch (Exception ex)
 
 Console.WriteLine("Press any key to exit.");
 Console.ReadKey();
+
+// Extract numbers from a string and return as int type
+static int ExtractNumbersFromString(string str)
+{
+    string numStr = string.Empty;
+
+    foreach (char c in str)
+    {
+        if (char.IsDigit(c))
+        {
+            numStr += c;
+        }
+        else if (numStr.Length > 0)
+        {
+            break;
+        }
+    }
+    
+    return int.Parse(numStr);
+}
