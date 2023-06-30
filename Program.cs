@@ -109,14 +109,11 @@ try
         if (!char.IsDigit(line[0]) && line.Contains('.'))
         {
             fileNameString = line;
+            positionString = "";
         }
         
         if (char.IsDigit(line[0]))
         {
-            // Char version that only checks the first character of the currently parsing line string
-            char firstCharOfCurrentLine = line[0];
-            char firstCharOfExistingLine = '\0';
-            
             // Use extracted and casted line numbers to compare for clearing
             int lineNumberOfCurrentLine = ExtractNumbersFromString(line);
             int lineNUmberOfExistingLine = default;
@@ -125,13 +122,12 @@ try
 
             if (!string.IsNullOrEmpty(positionString))
             {
-                 firstCharOfExistingLine = positionString[0];
-                 lineNUmberOfExistingLine = ExtractNumbersFromString(positionString);
+                lineNUmberOfExistingLine = ExtractNumbersFromString(positionString);
             }
             
             // If the current line number is the same as the previous one clear the positionString
             // to prevent duplicate lines of code from being sent to the output
-            if (firstCharOfCurrentLine == firstCharOfExistingLine)
+            if (lineNumberOfCurrentLine == lineNUmberOfExistingLine)
             {
                 positionString = "";
             }
